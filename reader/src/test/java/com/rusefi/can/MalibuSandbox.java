@@ -9,6 +9,7 @@ public class MalibuSandbox {
         String inputFolderName = "C:\\stuff\\gen5-private\\2013-malibu\\can-traces";
 
         Launcher.dbcFileName = "C:\\stuff\\gen5-private\\2013-malibu\\malibu.dbc";
+        DbcFile.applyOrderForStartOffset = true;
 
 //        DbcFile dbc = DbcFile.readFromFile(Launcher.dbcFileName);
 //        AlwaysSameScanner.run(inputFolderName, dbc);
