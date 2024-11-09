@@ -6,7 +6,8 @@ import java.io.IOException;
 
 public class MalibuSandbox {
     public static void main(String[] args) throws IOException {
-        String inputFolderName = "C:\\stuff\\gen5-private\\2013-malibu\\can-traces";
+//        String inputFolderName = "C:\\stuff\\gen5-private\\2013-malibu\\can-traces";
+        String inputFolderName = "C:\\stuff\\gen5-private\\2013-malibu\\can-traces\\diag";
 
         Launcher.dbcFileName = "C:\\stuff\\gen5-private\\2013-malibu\\malibu.dbc";
         DbcFile.applyOrderForStartOffset = true;
