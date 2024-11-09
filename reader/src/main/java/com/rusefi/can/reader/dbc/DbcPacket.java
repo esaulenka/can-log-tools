@@ -107,6 +107,10 @@ public class DbcPacket {
             if (field.coversByte(byteIndex))
                 return field;
         }
+        for (DbcField field : fields) {
+            if (field.touchesByte(byteIndex))
+                return field;
+        }
         return null;
     }
 }

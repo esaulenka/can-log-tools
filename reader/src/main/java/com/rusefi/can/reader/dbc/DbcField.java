@@ -149,10 +149,24 @@ public class DbcField {
 
     public boolean coversByte(int byteIndex) {
         int startBit = byteIndex * 8;
-        if (isBigEndian && /* byte endianess less important for one byte fields */ length > 8)
-            startBit += 8;
+
+        if (isBigEndian) {
+            if (DbcFile.applyOrderForStartOffset) {
+                startBit = DbcField.crazyMotorolaMath(startBit, length, true);
+
+            } else {
+                if (/* byte endianess less important for one byte fields */ length > 8) {
+                    startBit += 8;
+                }
+            }
+        }
+
         if (startOffset > startBit)
             return false;
         return startOffset + length >= startBit + 8;
+    }
+
+    public boolean touchesByte(int byteIndex) {
+        return false;
     }
 }
